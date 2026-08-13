@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5002/api";
-export const SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:5002";
+export const API_URL = import.meta.env.VITE_API_URL || "https://farmchainbackend.onrender.com/api";
+export const SERVER_URL = import.meta.env.VITE_SERVER_URL || "https://farmchainbackend.onrender.com";
 
 const api = axios.create({
   baseURL: API_URL,
