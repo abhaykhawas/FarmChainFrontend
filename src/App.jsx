@@ -15,6 +15,7 @@ import ReportsPage from "./pages/app/ReportsPage";
 import ChatPage from "./pages/app/ChatPage";
 import CartPage from "./pages/buyer/CartPage";
 import CheckoutPage from "./pages/buyer/CheckoutPage";
+import { PaymentResultPage, ResumePaymentPage } from "./pages/buyer/PaymentPages";
 import FavoritesPage from "./pages/buyer/FavoritesPage";
 import { ProductFormPage, ProductsPage } from "./pages/supplier/ProductPages";
 import CertificationPage from "./pages/supplier/CertificationPage";
@@ -54,6 +55,8 @@ export default function App() {
           <Route element={<RoleRoute roles={["buyer"]} />}>
             <Route path="cart" element={<CartPage />} />
             <Route path="checkout" element={<CheckoutPage />} />
+            <Route path="checkout/result" element={<PaymentResultPage />} />
+            <Route path="checkout/payment/:id" element={<ResumePaymentPage />} />
             <Route path="favorites" element={<FavoritesPage />} />
           </Route>
 

@@ -226,3 +226,34 @@ p { color: var(--muted); line-height: 1.7; }
   .toast-stack { left: 13px; right: 13px; bottom: 13px; }.toast { min-width: 0; max-width: none; }
   .not-found h1 { font-size: 37px; }
 }
+
+/* Stripe checkout */
+.status--succeeded { color: #306140; background: #dcecdf; }
+.status--processing, .status--refund_pending, .status--awaiting_payment { color: #82631d; background: #f7eccd; }
+.status--canceled { color: #963e3b; background: #f6dfdd; }
+.status--refunded, .status--partially_refunded { color: #326174; background: #dcecf1; }
+.payment-step-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(310px, .65fr); align-items: start; gap: 18px; }
+.payment-step-layout--single { grid-template-columns: minmax(0, 720px); justify-content: center; }
+.stripe-card { min-width: 0; }
+.stripe-payment-form { display: grid; gap: 18px; }
+.stripe-payment-form .button { margin-top: 4px; }
+.stripe-security-note { display: flex; align-items: center; justify-content: center; gap: 6px; margin: -4px 0 0; color: var(--muted); font-size: 9px; }
+.checkout-edit { width: 100%; justify-content: center; margin-top: 14px; border: 0; background: transparent; }
+.payment-result { min-height: 330px; }
+.payment-result .status { margin-top: 14px; }
+.payment-result h2 { margin-top: 12px; }
+.payment-result--failed > svg { color: var(--danger); }
+.payment-result-actions { display: flex; gap: 9px; margin-top: 15px; }
+.pending-order-note { display: flex; align-items: center; gap: 8px; padding: 14px; border-radius: 8px; background: var(--sage-light); font-size: 11px; }
+.transaction-ref { display: block; max-width: 190px; overflow: hidden; text-overflow: ellipsis; }
+.provider-label { display: block; margin-top: 3px; color: var(--muted); font-size: 8px; }
+
+@media (max-width: 860px) {
+  .payment-step-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .payment-result-actions { width: 100%; flex-direction: column; }
+  .payment-result-actions .button { width: 100%; }
+  .checkout-complete { padding: 38px 20px; }
+}
